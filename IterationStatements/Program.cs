@@ -45,13 +45,47 @@ namespace IterationStatements
             string input = Console.ReadLine(); 
             int result = Int32.Parse(input);
             Console.WriteLine($"{input} is legal = {isLegal(result)}");
+
+            // HEAT UP SECTION
+            // 1.Write a method to check if an integer (from the user) is in the range -10 to 10.
+            Console.WriteLine();
+            Console.Write("Enter a Number: ");
+            input = Console.ReadLine();
+            result = Int32.Parse(input);
+            Console.WriteLine($"{input} is between -10 to 10 = {isBetweenTheTens(result)}");
+
+
+            // 2.Write a method to display a given integer's multiplication table(from 1 to 12).
+            Console.WriteLine();
+            Console.Write("Enter a Number: ");
+            input = Console.ReadLine();
+            result = Int32.Parse(input);
+            Console.WriteLine($"{input} Multiplication between 1 to 12");
+            MultiplicationTable(result);
         }
+        public static void MultiplicationTable(int num) 
+        {
+            for (int i = 1; i < 13; i++)
+            {
+                Console.WriteLine($"{i} * {num} = {i * num}");
+            }
+        }
+
+
+
+        public static bool isBetweenTheTens(int num )
+        {
+            if (num > 10)
+                return false;
+            if (num < -10)
+                return false;
+            return true;
+        }
+
         public static bool isLegal(int age)
         {
             return age > 18;
         }
-
-
 
         public static string IsOddOrEven(int num) 
         {
@@ -70,7 +104,6 @@ namespace IterationStatements
                 retval = "Zero";
             return retval;
         }
-
 
         public static bool AreEqual(int left, int right) 
         {
